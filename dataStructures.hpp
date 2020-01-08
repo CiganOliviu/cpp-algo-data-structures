@@ -97,11 +97,7 @@ namespace dataStructures {
     int standardLimitSize = 0;
 
   public:
-    limits (int minimLimit, int maximLimit) {
-
-      this->minimLimit = minimLimit;
-      this->maximLimit = maximLimit;
-    }
+    limits () {}
 
     Type minimLimit = standardLimitSize;
     Type maximLimit = standardLimitSize;
