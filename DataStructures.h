@@ -13,21 +13,21 @@ namespace DataStructures {
 
     template <class Type> class OneDimensionalArrayType {
     private:
-        const unsigned int length {};
+        const unsigned int Length {};
         Type * OneDimensionalArray = new Type[STANDARD_LENGTH];
 
     public:
-        explicit OneDimensionalArrayType(unsigned int length) {
+        explicit OneDimensionalArrayType(unsigned int Length) {
 
-            this->length = length;
+            this->Length = Length;
         }
 
-        unsigned int GetLengthOfOneDimensionalArray() {
+        unsigned int GetLengthOfOneDimensionalArray () {
 
-            return this->length;
+            return this->Length;
         }
 
-        Type * GetOneDimensionalArray() {
+        Type * GetOneDimensionalArray () {
 
             return this->OneDimensionalArray;
         }
@@ -37,28 +37,28 @@ namespace DataStructures {
 
     template <class Type> class MatrixType {
     private:
-        const unsigned int line {};
-        const unsigned int column {};
+        const unsigned int Line {};
+        const unsigned int Column {};
         Type Matrix[MATRIX_STANDARD_LENGTH][MATRIX_STANDARD_LENGTH];
 
     public:
-        MatrixType(unsigned int line, unsigned int column) {
+        MatrixType(unsigned int Line, unsigned int Column) {
 
-            this->line = line;
-            this->column = column;
+            this->Line = Line;
+            this->Column = Column;
         }
 
-        unsigned int GetLineOfMatrix() {
+        unsigned int GetLineOfMatrix () {
 
-            return this->line;
+            return this->Line;
         }
 
-        unsigned int GetColumnOfMatrix() {
+        unsigned int GetColumnOfMatrix () {
 
-            return this->column;
+            return this->Column;
         }
 
-        Type ** GetMatrix() {
+        Type ** GetMatrix () {
 
             return this->Matrix;
         }
@@ -68,29 +68,27 @@ namespace DataStructures {
 
     template <class Type> class BinaryTreeType {
     private:
-        const Type value {};
+        const Type Value {};
         BinaryTreeType<Type> * LeftLeaf;
         BinaryTreeType<Type> * RightLeaf;
 
     public:
-        explicit BinaryTreeType() = default;
+        explicit BinaryTreeType(Type Value) {
 
-        void SetValueForBinaryTree(Type value) {
-
-            this->value = value;
+            this->Value = Value;
         }
 
-        Type GetValueOfBinaryTree() {
+        Type GetValueOfBinaryTree () {
 
-            return this->value;
+            return this->Value;
         }
 
-        BinaryTreeType<Type> * GetLeftLeafOfArray() {
+        BinaryTreeType<Type> * GetLeftLeafOfArray () {
 
             return this->LeftLeaf;
         }
 
-        BinaryTreeType<Type> * GetRightLeafOfArray() {
+        BinaryTreeType<Type> * GetRightLeafOfArray () {
 
             return this->RightLeaf;
         }
@@ -110,6 +108,16 @@ namespace DataStructures {
             this->Edges = Edges;
         }
 
+        unsigned int GetVertices () {
+
+            return this->Vertices;
+        }
+
+        unsigned int GetEdges () {
+
+            return this->Edges;
+        }
+
         ~GraphType() = default;
     };
 
@@ -124,12 +132,17 @@ namespace DataStructures {
             this->Data = Data;
         }
 
+        Type GetData () {
+
+            return this->Data;
+        }
+
         LinkedCore<Type> * GetNextLinkedValue() {
 
             return this->NextLinkedValue;
         }
 
-        virtual ~LinkedCore () = default;
+        ~LinkedCore () = default;
     };
 
     template <class Type> class DoubleLinkedCore {
@@ -144,6 +157,11 @@ namespace DataStructures {
             this->Data = Data;
         }
 
+        Type GetData () {
+
+            return this->Data;
+        }
+
         DoubleLinkedCore<Type> * GetNextDoubleLinkedValue() {
 
             return this->NextDoubleLinkedValue;
@@ -154,7 +172,7 @@ namespace DataStructures {
             return this->PreviousDoubleLinkedValue;
         }
 
-        virtual ~DoubleLinkedCore() = default;
+        ~DoubleLinkedCore() = default;
     };
 };
 
