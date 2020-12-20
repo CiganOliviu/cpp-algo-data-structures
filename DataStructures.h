@@ -17,15 +17,22 @@ namespace DataStructures {
         Type * OneDimensionalArray = new Type[STANDARD_LENGTH];
 
     public:
-        explicit OneDimensionalArrayType(unsigned int Length) {
+         OneDimensionalArrayType() = default;
 
-            this->Length = Length;
-        }
+         void SetLengthOfOneDimensionalArray(unsigned int length) {
+
+            this->length = length;
+         }
 
         unsigned int GetLengthOfOneDimensionalArray () {
 
             return this->Length;
         }
+
+        void SetOneDimensionalArray(Type * Array) {
+
+             this->OneDimensionalArray = Array;
+         }
 
         Type * GetOneDimensionalArray () {
 
@@ -42,20 +49,29 @@ namespace DataStructures {
         Type Matrix[MATRIX_STANDARD_LENGTH][MATRIX_STANDARD_LENGTH];
 
     public:
-        MatrixType(unsigned int Line, unsigned int Column) {
+        MatrixType() = default;
+
+        void SetLineOfMatrix(unsigned int Line) {
 
             this->Line = Line;
-            this->Column = Column;
         }
-
         unsigned int GetLineOfMatrix () {
 
             return this->Line;
         }
 
+        void SetColumnOfMatrix(unsigned int Column) {
+
+            this->Column = Column;
+        }
         unsigned int GetColumnOfMatrix () {
 
             return this->Column;
+        }
+
+        void SetMatrix(Type ** Matrix) {
+
+            this->Matrix = Matrix;
         }
 
         Type ** GetMatrix () {
